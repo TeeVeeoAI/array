@@ -17,21 +17,35 @@ void Main() {
 void Player1() {
     Gameboard_load(gameboard);
     Console.WriteLine("player1 enter a cordinet on the board. x,y");
-    string Input = Console.ReadLine();
-    string[] input = Input.Split(',');
-    char input_x = Convert.ToChar(input[0]);
-    char input_y = Convert.ToChar(input[1]);
-    gameboard[input_x, input_y] = 'x';
+    while (true) {
+        string Input = Console.ReadLine();
+        string[] input = Input.Split(",");
+        int input_x = Convert.ToInt32(input[0]);
+        int input_y = Convert.ToInt32(input[1]);
+        if (gameboard[input_y-1, input_x-1] == '-') {
+            gameboard[input_y-1, input_x-1] = 'x';
+            break;
+        } else {
+            Console.WriteLine("Invalid, retry");
+        }
+    }
 }
 
 void Player2() {
     Gameboard_load(gameboard);
-    Console.WriteLine("player2 enter a cordinet on the board. x,y");
-    string Input = Console.ReadLine();
-    string[] input = Input.Split(',');
-    char input_x = Convert.ToChar(input[0]);
-    char input_y = Convert.ToChar(input[1]);
-    gameboard[input_x, input_y] = 'o';
+        Console.WriteLine("player2 enter a cordinet on the board. x,y");
+    while (true) {
+        string Input = Console.ReadLine();
+        string[] input = Input.Split(",");
+        int input_x = Convert.ToInt32(input[0]);
+        int input_y = Convert.ToInt32(input[1]);
+        if (gameboard[input_y-1, input_x-1] == '-') {
+            gameboard[input_y-1, input_x-1] = 'o';
+            break;
+        } else {
+            Console.WriteLine("Invalid, retry");
+        }
+    }
 }
 
 void Gameboard_load(char[,] gb) {
