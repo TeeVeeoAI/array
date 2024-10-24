@@ -73,3 +73,12 @@ void Gameboard_load(char[,] gb) {
         }
     }
 }
+
+void win() {
+    if (gameboard[0, 0] == 'x' && gameboard[0, 1] == 'x' && gameboard[0, 2] == 'x' || 
+        gameboard[1, 0] == 'x' && gameboard[1, 1] == 'x' && gameboard[1, 2] == 'x' ||
+        gameboard[2, 0] == 'x' && gameboard[2, 1] == 'x' && gameboard[2, 2] == 'x' ||
+        gameboard[0, 0] == 'x' && gameboard[1, 1] == 'x' && gameboard[2, 2] == 'x') {
+
+    }
+}
